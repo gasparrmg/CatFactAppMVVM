@@ -1,6 +1,5 @@
-package com.android.catfactappmvvm.ui;
+package com.android.catfactappmvvm.ui.home.adapters;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.catfactappmvvm.R;
-import com.android.catfactappmvvm.data.Fact;
+import com.android.catfactappmvvm.data.remote.models.Fact;
 
 import java.util.ArrayList;
 import java.util.List;

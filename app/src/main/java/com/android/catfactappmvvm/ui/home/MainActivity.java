@@ -1,22 +1,27 @@
-package com.android.catfactappmvvm.ui;
+package com.android.catfactappmvvm.ui.home;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.catfactappmvvm.R;
-import com.android.catfactappmvvm.data.Fact;
+import com.android.catfactappmvvm.data.remote.models.Fact;
+import com.android.catfactappmvvm.ui.home.adapters.FactAdapter;
+import com.android.catfactappmvvm.ui.home.viewmodel.MainActivityViewModel;
+import com.android.catfactappmvvm.ui.personal.PersonalActivity;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -72,5 +77,25 @@ public class MainActivity extends AppCompatActivity {
                 getFactList(amount);
             }
         });
+    }
+
+    //TO SHOW ICON ON THE TOOLBAR
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.go_to_personal_facts, menu);
+        return true;
+    }
+
+    //TO HANDLE CLICKS ON THE TOOLBAR BUTTONS
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.go_to_personal_facts:
+                Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

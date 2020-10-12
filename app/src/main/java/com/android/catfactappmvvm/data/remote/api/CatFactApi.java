@@ -1,6 +1,6 @@
-package com.android.catfactappmvvm.api;
+package com.android.catfactappmvvm.data.remote.api;
 
-import com.android.catfactappmvvm.data.Fact;
+import com.android.catfactappmvvm.data.remote.models.Fact;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.android.catfactappmvvm.data;
+package com.android.catfactappmvvm.data.remote.models;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,10 +1,10 @@
-package com.android.catfactappmvvm.ui;
+package com.android.catfactappmvvm.ui.home.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.android.catfactappmvvm.data.Fact;
-import com.android.catfactappmvvm.data.FactRepository;
+import com.android.catfactappmvvm.data.remote.models.Fact;
+import com.android.catfactappmvvm.data.repository.FactRepository;
 
 import java.util.List;
 
