@@ -7,6 +7,7 @@ import androidx.room.Room;
 import com.android.catfactappmvvm.data.remote.api.CatFactApi;
 import com.android.catfactappmvvm.data.local.dao.PersonalFactDao;
 import com.android.catfactappmvvm.data.local.database.PersonalFactDatabase;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import javax.inject.Singleton;
 
@@ -14,6 +15,7 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ApplicationComponent;
+import dagger.hilt.android.qualifiers.ActivityContext;
 import dagger.hilt.android.qualifiers.ApplicationContext;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

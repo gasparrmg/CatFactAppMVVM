@@ -3,6 +3,10 @@
     package="com.android.catfactappmvvm">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Only needed for Android Q -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:name=".CatFactApplication"
@@ -12,7 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.personal.PersonalActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_MAPS_API_KEY"/>
+
+        <activity android:name=".ui.maps.MapActivity"></activity>
+        <activity android:name=".ui.personal.PersonalActivity" />
         <activity android:name=".ui.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:enabled="true" android:name="com.android.catfactappmvvm.services.MapService"/>
     </application>
 
 </manifest>
